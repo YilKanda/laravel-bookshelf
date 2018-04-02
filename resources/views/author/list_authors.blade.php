@@ -18,6 +18,9 @@
                     </li>
                 @endforeach
             </ul>
+            <div>
+                <a href="{{ route('authors.create') }}">Create new author</a>
+            </div>
 
         </div>
     </div>

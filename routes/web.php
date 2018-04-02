@@ -16,3 +16,11 @@ Route::get('/', 'AuthorController@listAuthors')
 Route::get('/authors/{id}', 'AuthorController@viewAuthor')
     ->where('id', '[\d]+')
     ->name('authors.view');
+Route::get('/authors/create', 'AuthorController@createAuthor')
+    ->name('authors.create');
+Route::get('/authors/{id}/edit', 'AuthorController@editAuthor')
+    ->where('id', '[\d]+')
+    ->name('authors.edit');
+Route::post('/authors/{id}/update', 'AuthorController@updateAuthor')
+    ->where('id', '[\d]+')
+    ->name('authors.update');

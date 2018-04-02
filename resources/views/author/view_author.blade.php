@@ -8,7 +8,11 @@
         <div class="col-md-12">
 
             <h1>{{ $author->name }}</h1>
+
             <p>{{ $author->biography}}</p>
+            <div>
+                <a href="{{ route('authors.edit', [$author->id]) }}">Edit</a>
+            </div>
 
         </div>
     </div>
