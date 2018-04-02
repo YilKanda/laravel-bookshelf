@@ -1,5 +1,13 @@
 <?php
 
+// fully qualify database file name if necessary for SQLite
+if (env('DB_CONNECTION') === 'sqlite') {
+    $database = env('DB_DATABASE', database_path('bookshelf.sqlite'));
+    if ($database[0] !== '/') {
+        $database = database_path(env('DB_DATABASE'));
+    }
+}
+
 return [
 
     /*
@@ -35,7 +43,7 @@ return [
 
         'sqlite' => [
             'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
+            'database' => $database,
             'prefix' => '',
         ],
 
