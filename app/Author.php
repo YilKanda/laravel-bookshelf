@@ -8,7 +8,11 @@ class Author extends Model
 {
     /**
      * Fields that can be updated via update()
-     * @var array
      */
     protected $fillable = ['name', 'biography'];
+
+    public function books()
+    {
+        return $this->hasMany('App\Book');
+    }
 }

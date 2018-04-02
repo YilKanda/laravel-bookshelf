@@ -14,6 +14,19 @@
                 <a href="{{ route('authors.edit', [$author->id]) }}">Edit</a>
             </div>
 
+            <h2>Books</h2>
+            <ul>
+                @foreach ($author->books as $book)
+                    <li>
+                        {{ $book->title }}
+                    </li>
+                @endforeach
+            </ul>
+
+            <div>
+                <a href="{{ route('authors.list') }}">Return to authors list</a>
+            </div>
+
         </div>
     </div>
 </div>
