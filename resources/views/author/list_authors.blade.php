@@ -11,7 +11,11 @@
 
             <ul>
                 @foreach ($authors as $author)
-                    <li>{{ $author->name }}</li>
+                    <li>
+                        <a href="{{ route('authors.view', [$author->id]) }}">
+                            {{ $author->name }}
+                        </a>
+                    </li>
                 @endforeach
             </ul>
 

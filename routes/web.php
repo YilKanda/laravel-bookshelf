@@ -11,4 +11,8 @@
 |
 */
 
-Route::get('/', 'AuthorController@listAuthors');
+Route::get('/', 'AuthorController@listAuthors')
+    ->name('authors.list');
+Route::get('/authors/{id}', 'AuthorController@viewAuthor')
+    ->where('id', '[\d]+')
+    ->name('authors.view');

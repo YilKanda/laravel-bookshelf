@@ -12,4 +12,10 @@ class AuthorController extends Controller
         $authors = Author::all();
         return view('author/list_authors', ['authors' => $authors]);
     }
+
+    public function viewAuthor(int $id)
+    {
+        $author = Author::findOrFail($id);
+        return view('author/view_author', ['author' => $author]);
+    }
 }
